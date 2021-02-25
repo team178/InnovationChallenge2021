@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include <boost/multiprecision/cpp_dec_float.hpp>
 
 //variables for resistance to PSI method
 double multiplyer = 103194.978229681;
@@ -21,6 +20,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println(ResistanceToPSI(30000));
+  Serial.println((double)ResistanceToPSI(30000));
   delay(100);
 }
