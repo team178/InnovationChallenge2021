@@ -47,7 +47,9 @@ void fsrArrayMaker(){
 
 void fsrArrayPrinter(){
   for(int printer=0; printer<numOfFSR; printer++){
-    Serial.println(fsrArrayReading[printer][0]);
+    Serial.print(fsrArrayReading[printer][0]);
+    Serial.print("          ");
+    Serial.println(fsrArrayReading[printer][1]);
   }
   Serial.println();
 }
