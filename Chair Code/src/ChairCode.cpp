@@ -11,6 +11,9 @@ int fsrReading=0;
 int fsrVoltage=0;
 unsigned long fsrResistance;
 
+//variables for array creator
+
+
 
 //will output the weight on the sensor from the resistance
 float ResistanceToPSI(float R){
@@ -25,8 +28,8 @@ float ResistanceToPSI(float R){
 }
 
 //wull output the resistance on a certin pin
-unsigned long readResistance(){
-  fsrReading = analogRead(A0);  
+unsigned long readResistance(int analogPin){
+  fsrReading = analogRead(analogPin);  
   fsrVoltage = map(fsrReading, 0, 1023, 0, 5000);
   fsrResistance = VCC - fsrVoltage;
   fsrResistance *= pullDownResistor;
@@ -36,12 +39,12 @@ unsigned long readResistance(){
 
 void setup() {
   Serial.begin(9600);
-  pinMode(A0, INPUT);
+  pinMode(0, INPUT);
 }
 
 void loop() {
-  unsigned long re=(readResistance());
-  Serial.println(re);
+  unsigned long re=(readResistance(5));
+  Serial.println((float)re);
   Serial.println(ResistanceToPSI(re));
   delay(1000);
 }
