@@ -12,7 +12,8 @@ int fsrVoltage=0;
 unsigned long fsrResistance;
 
 //variables for array creator
-
+const int numOfFSR=6; 
+float fsrArrayReading[numOfFSR+1][2];
 
 
 //will output the weight on the sensor from the resistance
@@ -37,14 +38,26 @@ unsigned long readResistance(int analogPin){
   return fsrResistance;
 }
 
+void fsrArrayMaker(){
+  for(int scan=0; scan<numOfFSR; scan++){
+    fsrArrayReading[scan][0]=readResistance(scan);
+    fsrArrayReading[scan][1]=ResistanceToPSI(fsrArrayReading[scan][0]);
+  }
+}
+
+void fsrArrayPrinter(){
+  for(int printer=0; printer<numOfFSR; printer++){
+    Serial.println(fsrArrayReading[printer][0]);
+  }
+  Serial.println();
+}
+
 void setup() {
   Serial.begin(9600);
-  pinMode(0, INPUT);
 }
 
 void loop() {
-  unsigned long re=(readResistance(5));
-  Serial.println((float)re);
-  Serial.println(ResistanceToPSI(re));
+  fsrArrayMaker();
+  fsrArrayPrinter();
   delay(1000);
 }
