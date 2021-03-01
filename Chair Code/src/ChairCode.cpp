@@ -56,10 +56,12 @@ void fsrArrayPrinter(){
 
 void setup() {
   Serial.begin(9600);
+  pinMode(9, OUTPUT);
 }
 
 void loop() {
-  fsrArrayMaker();
-  fsrArrayPrinter();
+  analogWrite(9, 1023);
+  delay(1000);
+  digitalWrite(9,LOW);
   delay(1000);
 }
