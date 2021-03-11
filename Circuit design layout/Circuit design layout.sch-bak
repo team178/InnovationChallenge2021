@@ -1,0 +1,27 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_SAMD:ATSAMD21G18A-A U?
+U 1 1 60494095
+P 4900 3350
+F 0 "U?" H 4900 1269 50  0000 C CNN
+F 1 "ATSAMD21G18A-A" H 4900 1360 50  0000 C CNN
+F 2 "Package_QFP:TQFP-48_7x7mm_P0.5mm" H 5800 1500 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf" H 4900 4350 50  0001 C CNN
+	1    4900 3350
+	-1   0    0    1   
+$EndComp
+$EndSCHEMATC

@@ -30,7 +30,7 @@ float ResistanceToPSI(float R){
 
 //wull output the resistance on a certin pin
 unsigned long readResistance(int analogPin){
-  fsrReading = analogRead(analogPin);  
+  fsrReading = analogRead(AIN0);  
   fsrVoltage = map(fsrReading, 0, 1023, 0, 5000);
   fsrResistance = VCC - fsrVoltage;
   fsrResistance *= pullDownResistor;
@@ -60,8 +60,7 @@ void setup() {
 }
 
 void loop() {
-  analogWrite(9, 1023);
-  delay(1000);
-  digitalWrite(9,LOW);
-  delay(1000);
+  fsrArrayMaker();
+  fsrArrayPrinter();
+  delay(5000);
 }
