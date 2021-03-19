@@ -11,6 +11,7 @@ int fsrReading=0;
 int fsrVoltage=0;
 unsigned long fsrResistance;
 
+
 //variables for array creator
 const int numOfFSR=7; 
 float fsrArrayReading[numOfFSR+1][2];
@@ -30,7 +31,7 @@ float ResistanceToPSI(float R){
 
 //wull output the resistance on a certin pin
 unsigned long readResistance(int analogPin){
-  fsrReading = analogRead(AR_DEFAULT);  
+  fsrReading = analogRead(analogPin);  
   fsrVoltage = map(fsrReading, 0, 1023, 0, 5000);
   fsrResistance = VCC - fsrVoltage;
   fsrResistance *= pullDownResistor;
@@ -56,11 +57,12 @@ void fsrArrayPrinter(){
 
 void setup() {
   Serial.begin(9600);
-  pinMode(9, OUTPUT);
+  pinMode(2, PIO_ANALOG);
 }
 
 void loop() {
   fsrArrayMaker();
   fsrArrayPrinter();
-  delay(5000);
+  Serial.println(analogRead(2));
+  delay(1000);
 }

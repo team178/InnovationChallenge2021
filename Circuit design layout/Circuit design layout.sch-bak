@@ -14,14 +14,607 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_SAMD:ATSAMD21G18A-A U?
-U 1 1 60494095
-P 4900 3350
-F 0 "U?" H 4900 1269 50  0000 C CNN
-F 1 "ATSAMD21G18A-A" H 4900 1360 50  0000 C CNN
-F 2 "Package_QFP:TQFP-48_7x7mm_P0.5mm" H 5800 1500 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf" H 4900 4350 50  0001 C CNN
-	1    4900 3350
-	-1   0    0    1   
+L MCU_Microchip_ATmega:ATmega2560-16AU U1
+U 1 1 604AA219
+P 2800 4150
+F 0 "U1" H 2800 1161 50  0000 C CNN
+F 1 "ATmega2560-16AU" H 2800 1070 50  0000 C CNN
+F 2 "Package_QFP:TQFP-100_14x14mm_P0.5mm" H 2800 4150 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2549-8-bit-AVR-Microcontroller-ATmega640-1280-1281-2560-2561_datasheet.pdf" H 2800 4150 50  0001 C CNN
+	1    2800 4150
+	1    0    0    -1  
 $EndComp
+$Comp
+L Device:Resonator Y1
+U 1 1 604AF990
+P 1500 1850
+F 0 "Y1" V 1454 1960 50  0000 L CNN
+F 1 "Resonator" V 1545 1960 50  0000 L CNN
+F 2 "" H 1475 1850 50  0001 C CNN
+F 3 "~" H 1475 1850 50  0001 C CNN
+	1    1500 1850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1500 1700 2000 1700
+Wire Wire Line
+	2000 1700 2000 1750
+Wire Wire Line
+	1500 2000 2000 2000
+Wire Wire Line
+	2000 2000 2000 1950
+$Comp
+L Device:R R1
+U 1 1 604B869F
+P 950 1850
+F 0 "R1" H 1020 1896 50  0000 L CNN
+F 1 "1 MΩ" H 1020 1805 50  0000 L CNN
+F 2 "" V 880 1850 50  0001 C CNN
+F 3 "~" H 950 1850 50  0001 C CNN
+	1    950  1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	950  2000 1500 2000
+Connection ~ 1500 2000
+Wire Wire Line
+	950  1700 1500 1700
+Connection ~ 1500 1700
+$Comp
+L power:Earth #PWR0101
+U 1 1 604B9331
+P 1300 1850
+F 0 "#PWR0101" H 1300 1600 50  0001 C CNN
+F 1 "Earth" H 1300 1700 50  0001 C CNN
+F 2 "" H 1300 1850 50  0001 C CNN
+F 3 "~" H 1300 1850 50  0001 C CNN
+	1    1300 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0102
+U 1 1 604BA6A6
+P 2900 1250
+F 0 "#PWR0102" H 2900 1100 50  0001 C CNN
+F 1 "VCC" H 2915 1423 50  0000 C CNN
+F 2 "" H 2900 1250 50  0001 C CNN
+F 3 "" H 2900 1250 50  0001 C CNN
+	1    2900 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0103
+U 1 1 604BD16A
+P 2800 1250
+F 0 "#PWR0103" H 2800 1100 50  0001 C CNN
+F 1 "VCC" H 2815 1423 50  0000 C CNN
+F 2 "" H 2800 1250 50  0001 C CNN
+F 3 "" H 2800 1250 50  0001 C CNN
+	1    2800 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0104
+U 1 1 604BD5D8
+P 2800 7050
+F 0 "#PWR0104" H 2800 6800 50  0001 C CNN
+F 1 "Earth" H 2800 6900 50  0001 C CNN
+F 2 "" H 2800 7050 50  0001 C CNN
+F 3 "~" H 2800 7050 50  0001 C CNN
+	1    2800 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Open SW1
+U 1 1 604C1CC4
+P 1400 1550
+F 0 "SW1" H 1400 1765 50  0000 C CNN
+F 1 "SW_Push_Open" H 1400 1674 50  0000 C CNN
+F 2 "" H 1400 1750 50  0001 C CNN
+F 3 "~" H 1400 1750 50  0001 C CNN
+	1    1400 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 1550 2000 1550
+$Comp
+L Device:R R2
+U 1 1 604C3066
+P 1050 1550
+F 0 "R2" V 843 1550 50  0000 C CNN
+F 1 "10 kΩ" V 934 1550 50  0000 C CNN
+F 2 "" V 980 1550 50  0001 C CNN
+F 3 "~" H 1050 1550 50  0001 C CNN
+	1    1050 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VCC #PWR0105
+U 1 1 604C37AB
+P 900 1550
+F 0 "#PWR0105" H 900 1400 50  0001 C CNN
+F 1 "VCC" V 915 1677 50  0000 L CNN
+F 2 "" H 900 1550 50  0001 C CNN
+F 3 "" H 900 1550 50  0001 C CNN
+	1    900  1550
+	0    -1   -1   0   
+$EndComp
+Wire Bus Line
+	1900 7400 3950 7400
+Entry Wire Line
+	3950 6150 3850 6050
+Entry Wire Line
+	3950 6250 3850 6150
+Entry Wire Line
+	3950 6350 3850 6250
+Entry Wire Line
+	3950 6450 3850 6350
+Entry Wire Line
+	3950 6550 3850 6450
+Entry Wire Line
+	3950 6650 3850 6550
+Entry Wire Line
+	3950 6750 3850 6650
+Entry Wire Line
+	3950 6850 3850 6750
+Wire Wire Line
+	3850 6050 3600 6050
+Wire Wire Line
+	3850 6150 3600 6150
+Wire Wire Line
+	3850 6250 3600 6250
+Wire Wire Line
+	3850 6350 3600 6350
+Wire Wire Line
+	3600 6450 3850 6450
+Wire Wire Line
+	3850 6550 3600 6550
+Wire Wire Line
+	3600 6650 3850 6650
+Wire Wire Line
+	3850 6750 3600 6750
+Text Label 3600 6050 0    50   ~ 0
+FSR0
+Text Label 3600 6150 0    50   ~ 0
+FSR1
+Text Label 3600 6250 0    50   ~ 0
+FSR2
+Text Label 3600 6350 0    50   ~ 0
+FSR3
+Text Label 3600 6450 0    50   ~ 0
+FSR4
+Text Label 3600 6550 0    50   ~ 0
+FSR5
+Text Label 3600 6650 0    50   ~ 0
+FSR6
+Text Label 3600 6750 0    50   ~ 0
+FSR7
+NoConn ~ 2000 3450
+NoConn ~ 2000 3550
+NoConn ~ 2000 3650
+NoConn ~ 2000 3750
+NoConn ~ 2000 3850
+NoConn ~ 2000 3950
+NoConn ~ 2000 4050
+Entry Wire Line
+	1750 3450 1850 3350
+Wire Wire Line
+	1850 3350 2000 3350
+Text Label 1850 3350 0    50   ~ 0
+FSR8
+Entry Wire Line
+	4000 5950 4100 5850
+Wire Wire Line
+	4050 5650 4100 5650
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 604C5A77
+P 3900 5650
+F 0 "RF?" V 3615 5650 50  0000 C CNN
+F 1 "FSR" V 3706 5650 50  0000 C CNN
+F 2 "" H 3900 5400 50  0001 C TNN
+F 3 "" H 3900 5300 50  0001 C TNN
+	1    3900 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 604D7EA8
+P 4300 5650
+F 0 "R?" V 4093 5650 50  0000 C CNN
+F 1 "10 kΩ" V 4184 5650 50  0000 C CNN
+F 2 "" V 4230 5650 50  0001 C CNN
+F 3 "~" H 4300 5650 50  0001 C CNN
+	1    4300 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4100 5850 4100 5650
+Connection ~ 4100 5650
+Wire Wire Line
+	4100 5650 4150 5650
+Entry Wire Line
+	4800 5950 4900 5850
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 60502AD7
+P 4700 5650
+F 0 "RF?" V 4415 5650 50  0000 C CNN
+F 1 "FSR" V 4506 5650 50  0000 C CNN
+F 2 "" H 4700 5400 50  0001 C TNN
+F 3 "" H 4700 5300 50  0001 C TNN
+	1    4700 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60502ADD
+P 5100 5650
+F 0 "R?" V 4893 5650 50  0000 C CNN
+F 1 "10 kΩ" V 4984 5650 50  0000 C CNN
+F 2 "" V 5030 5650 50  0001 C CNN
+F 3 "~" H 5100 5650 50  0001 C CNN
+	1    5100 5650
+	0    1    1    0   
+$EndComp
+Entry Wire Line
+	5600 5950 5700 5850
+Wire Wire Line
+	5650 5650 5700 5650
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 6050419B
+P 5500 5650
+F 0 "RF?" V 5215 5650 50  0000 C CNN
+F 1 "FSR" V 5306 5650 50  0000 C CNN
+F 2 "" H 5500 5400 50  0001 C TNN
+F 3 "" H 5500 5300 50  0001 C TNN
+	1    5500 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 605041A1
+P 5900 5650
+F 0 "R?" V 5693 5650 50  0000 C CNN
+F 1 "10 kΩ" V 5784 5650 50  0000 C CNN
+F 2 "" V 5830 5650 50  0001 C CNN
+F 3 "~" H 5900 5650 50  0001 C CNN
+	1    5900 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5700 5850 5700 5650
+Connection ~ 5700 5650
+Wire Wire Line
+	5700 5650 5750 5650
+Entry Wire Line
+	6400 5950 6500 5850
+Wire Wire Line
+	6450 5650 6500 5650
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 60504F81
+P 6300 5650
+F 0 "RF?" V 6015 5650 50  0000 C CNN
+F 1 "FSR" V 6106 5650 50  0000 C CNN
+F 2 "" H 6300 5400 50  0001 C TNN
+F 3 "" H 6300 5300 50  0001 C TNN
+	1    6300 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60504F87
+P 6700 5650
+F 0 "R?" V 6493 5650 50  0000 C CNN
+F 1 "10 kΩ" V 6584 5650 50  0000 C CNN
+F 2 "" V 6630 5650 50  0001 C CNN
+F 3 "~" H 6700 5650 50  0001 C CNN
+	1    6700 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 5850 6500 5650
+Connection ~ 6500 5650
+Wire Wire Line
+	6500 5650 6550 5650
+Entry Wire Line
+	7200 5950 7300 5850
+Wire Wire Line
+	7250 5650 7300 5650
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 605058F1
+P 7100 5650
+F 0 "RF?" V 6815 5650 50  0000 C CNN
+F 1 "FSR" V 6906 5650 50  0000 C CNN
+F 2 "" H 7100 5400 50  0001 C TNN
+F 3 "" H 7100 5300 50  0001 C TNN
+	1    7100 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 605058F7
+P 7500 5650
+F 0 "R?" V 7293 5650 50  0000 C CNN
+F 1 "10 kΩ" V 7384 5650 50  0000 C CNN
+F 2 "" V 7430 5650 50  0001 C CNN
+F 3 "~" H 7500 5650 50  0001 C CNN
+	1    7500 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7300 5850 7300 5650
+Connection ~ 7300 5650
+Wire Wire Line
+	7300 5650 7350 5650
+Entry Wire Line
+	8000 5950 8100 5850
+Wire Wire Line
+	8050 5650 8100 5650
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 6050AB91
+P 7900 5650
+F 0 "RF?" V 7615 5650 50  0000 C CNN
+F 1 "FSR" V 7706 5650 50  0000 C CNN
+F 2 "" H 7900 5400 50  0001 C TNN
+F 3 "" H 7900 5300 50  0001 C TNN
+	1    7900 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6050AB97
+P 8300 5650
+F 0 "R?" V 8093 5650 50  0000 C CNN
+F 1 "10 kΩ" V 8184 5650 50  0000 C CNN
+F 2 "" V 8230 5650 50  0001 C CNN
+F 3 "~" H 8300 5650 50  0001 C CNN
+	1    8300 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8100 5850 8100 5650
+Connection ~ 8100 5650
+Wire Wire Line
+	8100 5650 8150 5650
+Entry Wire Line
+	8800 5950 8900 5850
+Wire Wire Line
+	8850 5650 8900 5650
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 6050B2D3
+P 8700 5650
+F 0 "RF?" V 8415 5650 50  0000 C CNN
+F 1 "FSR" V 8506 5650 50  0000 C CNN
+F 2 "" H 8700 5400 50  0001 C TNN
+F 3 "" H 8700 5300 50  0001 C TNN
+	1    8700 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6050B2D9
+P 9100 5650
+F 0 "R?" V 8893 5650 50  0000 C CNN
+F 1 "10 kΩ" V 8984 5650 50  0000 C CNN
+F 2 "" V 9030 5650 50  0001 C CNN
+F 3 "~" H 9100 5650 50  0001 C CNN
+	1    9100 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8900 5850 8900 5650
+Connection ~ 8900 5650
+Wire Wire Line
+	8900 5650 8950 5650
+Entry Wire Line
+	9600 5950 9700 5850
+Wire Wire Line
+	9650 5650 9700 5650
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 6050BD54
+P 9500 5650
+F 0 "RF?" V 9215 5650 50  0000 C CNN
+F 1 "FSR" V 9306 5650 50  0000 C CNN
+F 2 "" H 9500 5400 50  0001 C TNN
+F 3 "" H 9500 5300 50  0001 C TNN
+	1    9500 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6050BD5A
+P 9900 5650
+F 0 "R?" V 9693 5650 50  0000 C CNN
+F 1 "10 kΩ" V 9784 5650 50  0000 C CNN
+F 2 "" V 9830 5650 50  0001 C CNN
+F 3 "~" H 9900 5650 50  0001 C CNN
+	1    9900 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9700 5850 9700 5650
+Connection ~ 9700 5650
+Wire Wire Line
+	9700 5650 9750 5650
+Wire Bus Line
+	1750 7350 1900 7350
+Wire Bus Line
+	1900 7350 1900 7400
+Entry Wire Line
+	10400 5950 10500 5850
+Wire Wire Line
+	10450 5650 10500 5650
+$Comp
+L misc_giogziro95:FSR RF?
+U 1 1 605207CB
+P 10300 5650
+F 0 "RF?" V 10015 5650 50  0000 C CNN
+F 1 "FSR" V 10106 5650 50  0000 C CNN
+F 2 "" H 10300 5400 50  0001 C TNN
+F 3 "" H 10300 5300 50  0001 C TNN
+	1    10300 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 605207D1
+P 10700 5650
+F 0 "R?" V 10493 5650 50  0000 C CNN
+F 1 "10 kΩ" V 10584 5650 50  0000 C CNN
+F 2 "" V 10630 5650 50  0001 C CNN
+F 3 "~" H 10700 5650 50  0001 C CNN
+	1    10700 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10500 5850 10500 5650
+Connection ~ 10500 5650
+Wire Wire Line
+	10500 5650 10550 5650
+Wire Wire Line
+	4900 5650 4950 5650
+Wire Wire Line
+	4850 5650 4900 5650
+Connection ~ 4900 5650
+Wire Wire Line
+	4900 5850 4900 5650
+Text Label 4100 5850 0    50   ~ 0
+FSR0
+Text Label 4900 5850 0    50   ~ 0
+FSR1
+Text Label 5700 5850 0    50   ~ 0
+FSR2
+Text Label 6500 5850 0    50   ~ 0
+FSR3
+Text Label 7300 5850 0    50   ~ 0
+FSR4
+Text Label 8100 5850 0    50   ~ 0
+FSR5
+Text Label 8900 5850 0    50   ~ 0
+FSR6
+Text Label 9700 5850 0    50   ~ 0
+FSR7
+Text Label 10500 5850 0    50   ~ 0
+FSR8
+$Comp
+L power:Earth #PWR?
+U 1 1 60527880
+P 11000 5350
+F 0 "#PWR?" H 11000 5100 50  0001 C CNN
+F 1 "Earth" H 11000 5200 50  0001 C CNN
+F 2 "" H 11000 5350 50  0001 C CNN
+F 3 "~" H 11000 5350 50  0001 C CNN
+	1    11000 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 605287FA
+P 3750 5300
+F 0 "#PWR?" H 3750 5150 50  0001 C CNN
+F 1 "VCC" H 3765 5473 50  0000 C CNN
+F 2 "" H 3750 5300 50  0001 C CNN
+F 3 "" H 3750 5300 50  0001 C CNN
+	1    3750 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 5350 4450 5650
+Wire Wire Line
+	3750 5300 4550 5300
+Wire Wire Line
+	10150 5300 10150 5650
+Wire Wire Line
+	3750 5650 3750 5300
+Connection ~ 3750 5300
+Wire Wire Line
+	4550 5650 4550 5300
+Connection ~ 4550 5300
+Wire Wire Line
+	4550 5300 5350 5300
+Wire Wire Line
+	5250 5650 5250 5350
+Connection ~ 5250 5350
+Wire Wire Line
+	5250 5350 4450 5350
+Wire Wire Line
+	5350 5650 5350 5300
+Connection ~ 5350 5300
+Wire Wire Line
+	5350 5300 6150 5300
+Wire Wire Line
+	6050 5650 6050 5350
+Connection ~ 6050 5350
+Wire Wire Line
+	6050 5350 5250 5350
+Wire Wire Line
+	6150 5650 6150 5300
+Connection ~ 6150 5300
+Wire Wire Line
+	6150 5300 6950 5300
+Wire Wire Line
+	6850 5650 6850 5350
+Connection ~ 6850 5350
+Wire Wire Line
+	6850 5350 6050 5350
+Wire Wire Line
+	6950 5650 6950 5300
+Connection ~ 6950 5300
+Wire Wire Line
+	6950 5300 7750 5300
+Wire Wire Line
+	7650 5650 7650 5350
+Connection ~ 7650 5350
+Wire Wire Line
+	7650 5350 6850 5350
+Wire Wire Line
+	7750 5650 7750 5300
+Connection ~ 7750 5300
+Wire Wire Line
+	7750 5300 8550 5300
+Wire Wire Line
+	8450 5650 8450 5350
+Connection ~ 8450 5350
+Wire Wire Line
+	8450 5350 7650 5350
+Wire Wire Line
+	8550 5650 8550 5300
+Connection ~ 8550 5300
+Wire Wire Line
+	9250 5650 9250 5350
+Wire Wire Line
+	8450 5350 9250 5350
+Connection ~ 9250 5350
+Wire Wire Line
+	9250 5350 10050 5350
+Wire Wire Line
+	9350 5650 9350 5300
+Wire Wire Line
+	8550 5300 9350 5300
+Connection ~ 9350 5300
+Wire Wire Line
+	9350 5300 10150 5300
+Wire Wire Line
+	10050 5650 10050 5350
+Connection ~ 10050 5350
+Wire Wire Line
+	10850 5650 10850 5350
+Wire Bus Line
+	1750 3300 1750 7350
+Wire Wire Line
+	10050 5350 10850 5350
+Wire Bus Line
+	3950 5950 11150 5950
+Wire Bus Line
+	3950 5950 3950 7400
+Connection ~ 10850 5350
+Wire Wire Line
+	10850 5350 11000 5350
 $EndSCHEMATC
